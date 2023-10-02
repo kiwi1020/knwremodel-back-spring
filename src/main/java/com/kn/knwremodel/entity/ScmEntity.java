@@ -1,19 +1,29 @@
 package com.kn.knwremodel.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
+
+
+@Entity
+@Getter
+@Builder
+@ToString
 public class ScmEntity {
 
-    @Getter
-    @Builder
-    @ToString
-    public static class News {
-        private String image;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-        public String getImage() {
-            return image;
-        }
+    private Long id;
+
+    private String image;
+
+    public String getImage() {
+        return image;
     }
 }
