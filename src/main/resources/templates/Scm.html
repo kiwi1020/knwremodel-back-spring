@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>뉴스</title>
+</head>
+<body>
+<div>
+    <table class="table">
+        <tr>
+            <th>이미지</th>
+        </tr>
+        <tr th:each="news : ${news}">
+            <td>
+                <a th:href="${news.image}">
+                    <img th:src="${news.image}" alt="뉴스 이미지">
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
